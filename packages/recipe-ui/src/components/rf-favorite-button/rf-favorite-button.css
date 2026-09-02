@@ -1,0 +1,45 @@
+:host {
+  display: inline-flex;
+}
+
+.fav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--rf-color-border);
+  border-radius: 999px;
+  background: var(--rf-color-bg);
+  color: var(--rf-color-text-muted);
+  cursor: pointer;
+  transition: color var(--rf-transition), background-color var(--rf-transition),
+    border-color var(--rf-transition);
+}
+
+.fav:hover:not(:disabled) {
+  color: var(--rf-color-favorite);
+  border-color: var(--rf-color-favorite);
+}
+
+.fav:focus-visible {
+  outline: 2px solid var(--rf-color-focus);
+  outline-offset: 2px;
+}
+
+.fav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fav--active {
+  color: var(--rf-color-favorite);
+  border-color: var(--rf-color-favorite);
+  background: #fff1f2;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

@@ -1,0 +1,72 @@
+:host {
+  display: block;
+  font-family: var(--rf-font-sans);
+  color: var(--rf-color-text);
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rf-space-4);
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--rf-space-4);
+  border: 1px solid var(--rf-color-border);
+  border-radius: var(--rf-radius-lg);
+  background: var(--rf-color-surface);
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rf-space-3);
+  flex: 1 1 auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-space-1);
+  min-width: 10rem;
+}
+
+.label {
+  font-size: var(--rf-font-size-sm);
+  font-weight: 600;
+}
+
+.control {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rf-color-border);
+  border-radius: var(--rf-radius-md);
+  background: var(--rf-color-bg);
+  color: inherit;
+  font: inherit;
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--rf-color-focus);
+  outline-offset: 2px;
+}
+
+.clear {
+  min-height: 2.5rem;
+  padding: 0 0.875rem;
+  border: 1px solid var(--rf-color-border);
+  border-radius: var(--rf-radius-md);
+  background: var(--rf-color-bg);
+  color: var(--rf-color-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear:hover {
+  border-color: var(--rf-color-text-muted);
+}
+
+.clear:focus-visible {
+  outline: 2px solid var(--rf-color-focus);
+  outline-offset: 2px;
+}

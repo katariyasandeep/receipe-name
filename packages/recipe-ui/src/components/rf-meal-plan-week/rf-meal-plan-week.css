@@ -1,0 +1,72 @@
+:host {
+  display: block;
+  font-family: var(--rf-font-sans);
+  color: var(--rf-color-text);
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-space-3);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rf-space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.week-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.table {
+  overflow-x: auto;
+  border: 1px solid var(--rf-color-border);
+  border-radius: var(--rf-radius-lg);
+  background: var(--rf-color-bg);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 6.5rem repeat(7, minmax(7.5rem, 1fr));
+  min-width: 62rem;
+}
+
+.row--head {
+  background: var(--rf-color-surface);
+  border-bottom: 1px solid var(--rf-color-border);
+}
+
+.corner,
+.day-head,
+.slot-label,
+.cell {
+  padding: var(--rf-space-2);
+}
+
+.day-head,
+.slot-label {
+  font-size: var(--rf-font-size-sm);
+  font-weight: 700;
+}
+
+.slot-label {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--rf-color-border);
+  background: var(--rf-color-surface);
+}
+
+.cell {
+  border-top: 1px solid var(--rf-color-border);
+  border-left: 1px solid var(--rf-color-border);
+}
+
+.cell-inner {
+  height: 100%;
+  min-height: 5.5rem;
+}

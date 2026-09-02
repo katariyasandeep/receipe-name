@@ -1,0 +1,33 @@
+---
+description: Recipe Finder multi-agent workflow — run specialized agents in order; never rebuild working pieces.
+alwaysApply: true
+---
+
+# Recipe Finder Agent Workflow
+
+Build with specialized agents — do not implement the entire assignment in one shot.
+
+## Required preamble (every agent)
+
+At the start of every agent task:
+
+> Read ARCHITECTURE.md and inspect the existing implementation before making changes. Do not rewrite working functionality. Preserve existing conventions and integrate with the existing architecture.
+
+## Run order
+
+1. `architecture` → ARCHITECTURE.md only (no features)
+2. `stencil-component-library` → packages/recipe-ui
+3. `api-data-layer` → apps/web data/API layer
+4. `sveltekit-ui` → app shell + routes
+5. Then in parallel if needed: `recipe-management`, `favorites`, `meal-planner`
+6. `stencil-svelte-integration` → INTEGRATION.md
+7. `testing-quality` → tests + fixes
+8. `deployment-npm` → RELEASE.md + README (no invented URLs)
+9. `final-review` → ASSIGNMENT_REVIEW.md
+
+## Hard constraints
+
+- Stack: Svelte 5 + SvelteKit + TypeScript + StencilJS
+- SvelteKit consumes the **published** Stencil npm package — never Stencil source
+- Demonstrate props, custom events, and slots
+- Prefer simple production architecture over unnecessary complexity

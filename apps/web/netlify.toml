@@ -1,0 +1,13 @@
+# Static SPA deploy for apps/web (SvelteKit + adapter-static).
+# Prefer deploying from the monorepo root; see RELEASE.md.
+
+[build]
+  base = "."
+  command = "cd ../.. && npm run build"
+  publish = "build"
+
+# SPA fallback so client routes (/recipes/..., /meal-planner, etc.) work on refresh.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

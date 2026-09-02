@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  font-family: var(--rf-font-sans);
+  color: var(--rf-color-text);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rf-space-2);
+}
+
+.label {
+  font-size: var(--rf-font-size-sm);
+  font-weight: 600;
+}
+
+.req {
+  color: var(--rf-color-danger);
+}
+
+.select {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rf-color-border);
+  border-radius: var(--rf-radius-md);
+  background: var(--rf-color-bg);
+  color: inherit;
+  font: inherit;
+  font-size: var(--rf-font-size-md);
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--rf-color-focus);
+  outline-offset: 2px;
+}
+
+.select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.select--error {
+  border-color: var(--rf-color-danger);
+  background: var(--rf-color-danger-soft);
+}
+
+.error {
+  margin: 0;
+  color: var(--rf-color-danger);
+  font-size: var(--rf-font-size-sm);
+}

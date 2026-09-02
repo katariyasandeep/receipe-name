@@ -1,0 +1,27 @@
+{
+  "name": "recipe-finder",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Recipe Finder & Meal Planner — monorepo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandeepsaini01/recipe-finder.git"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/web",
+    "build": "npm run build -w @recipe-finder/recipe-ui && npm run build -w apps/web",
+    "build:ui": "npm run build -w @recipe-finder/recipe-ui",
+    "preview": "npm run preview -w apps/web",
+    "test": "npm run test -w @recipe-finder/recipe-ui && npm run test -w apps/web --if-present",
+    "test:ui": "npm run test -w @recipe-finder/recipe-ui",
+    "pack:ui": "npm pack -w @recipe-finder/recipe-ui"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

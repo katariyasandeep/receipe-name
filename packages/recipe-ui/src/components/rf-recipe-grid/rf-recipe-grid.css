@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  font-family: var(--rf-font-sans);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--rf-space-4);
+}
+
+.item {
+  min-width: 0;
+}
+
+.empty-slot:empty {
+  display: none;
+}

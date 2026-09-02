@@ -1,0 +1,68 @@
+:host {
+  display: inline-block;
+  font-family: var(--rf-font-sans);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rf-space-2);
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--rf-radius-md);
+  font-size: var(--rf-font-size-md);
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color var(--rf-transition), border-color var(--rf-transition),
+    color var(--rf-transition), opacity var(--rf-transition);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--rf-color-focus);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--rf-color-primary);
+  color: var(--rf-color-primary-contrast);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--rf-color-primary-hover);
+}
+
+.btn--secondary {
+  background: var(--rf-color-surface);
+  color: var(--rf-color-text);
+  border-color: var(--rf-color-border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: var(--rf-color-text-muted);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--rf-color-primary);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--rf-color-surface);
+}
+
+.btn--danger {
+  background: var(--rf-color-danger);
+  color: #fff;
+}
+
+.btn--danger:hover:not(:disabled) {
+  filter: brightness(1.05);
+}

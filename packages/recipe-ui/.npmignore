@@ -1,0 +1,15 @@
+src/
+docs/
+www/
+.stencil/
+coverage/
+*.spec.ts
+*.spec.tsx
+*.e2e.ts
+stencil.config.ts
+tsconfig.json
+jest.config.js
+.git
+.gitignore
+*.log
+.DS_Store

@@ -1,0 +1,12 @@
+# Monorepo root Netlify config (recommended).
+# Builds Stencil UI then the SvelteKit static app.
+
+[build]
+  command = "npm run build"
+  publish = "apps/web/build"
+
+# SPA fallback for client-side routes after adapter-static export.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

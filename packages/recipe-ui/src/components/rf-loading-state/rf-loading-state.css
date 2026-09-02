@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  font-family: var(--rf-font-sans);
+  color: var(--rf-color-text-muted);
+}
+
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rf-space-3);
+  padding: var(--rf-space-4);
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--rf-color-border);
+  border-top-color: var(--rf-color-primary);
+  border-radius: 50%;
+  animation: rf-spin 0.7s linear infinite;
+}
+
+.label {
+  font-size: var(--rf-font-size-md);
+}
+
+@keyframes rf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
