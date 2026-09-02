@@ -98,7 +98,7 @@
       return;
     }
 
-    void goto(appPath('/my-recipes'));
+    void goto('/my-recipes');
   }
 </script>
 
@@ -122,7 +122,7 @@
   {/if}
 
   <div class="meta-row">
-    <a class="chip" href={recipePath(recipe.id)}>View recipe</a>
+    <a class="chip" href={appPath(recipePath(recipe.id))}>View recipe</a>
     <rf-button type="button" variant="danger" onrfClick={openDelete}>Delete</rf-button>
   </div>
 

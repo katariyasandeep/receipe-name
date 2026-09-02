@@ -5,7 +5,7 @@
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
   import { favorites, userRecipes } from '$lib/stores';
   import type { Recipe, UserRecipe } from '$lib/types';
-  import { appPath, isUserId, parseRecipeId } from '$lib/utils';
+  import { appPath, isUserId, parseRecipeId, stripBasePath } from '$lib/utils';
 
   let recipe = $state<Recipe | null>(null);
   let loading = $state(true);
@@ -75,7 +75,7 @@
   // afterNavigate also runs on first paint — skip onMount load to avoid duplicate fetches.
   afterNavigate(({ to }) => {
     if (!to?.params?.id) return;
-    if (!to.url.pathname.startsWith('/recipes/')) return;
+    if (!stripBasePath(to.url.pathname).startsWith('/recipes/')) return;
     void load(to.params.id);
   });
 </script>

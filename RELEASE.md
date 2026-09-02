@@ -91,8 +91,8 @@ GitHub Actions workflow: `.github/workflows/deploy-pages.yml`
 
 **After a successful deploy:**
 
-- [ ] Paste the live URL into `README.md` (replace the deployed-app placeholder)
-- [ ] Record here: **live app URL:** `________`
+- [x] Paste the live URL into `README.md` (replace the deployed-app placeholder)
+- [x] Record here: **live app URL:** `https://katariyasandeep.github.io/receipe-name/`
 
 ### Netlify (manual)
 
@@ -146,6 +146,6 @@ Against the **live** URL:
 |----------|-----|
 | npm `@sandeep_saini/recipe-ui` | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
 | GitHub repository | https://github.com/katariyasandeep/receipe-name |
-| Deployed application | _Not deployed yet_ |
+| Deployed application | https://katariyasandeep.github.io/receipe-name/ |
 
 See also: [ARCHITECTURE.md](./ARCHITECTURE.md) §13–14, [INTEGRATION.md](./INTEGRATION.md).

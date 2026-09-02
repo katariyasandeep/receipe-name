@@ -96,8 +96,6 @@ GitHub: https://github.com/katariyasandeep/receipe-name
 
 ## Deployed application URL
 
-> **Pending first GitHub Pages deploy.** Enable Pages (Settings → Pages → Source: GitHub Actions), then after the workflow succeeds the app will be at:
-
 ```text
 Live app: https://katariyasandeep.github.io/receipe-name/
 ```
@@ -106,7 +104,7 @@ Deploy is automated via [`.github/workflows/deploy-pages.yml`](./.github/workflo
 
 Also supported: Netlify / Vercel configs at the repo root (see [RELEASE.md](./RELEASE.md)).
 
-SPA fallback: GitHub Pages uses a copied `404.html`; Netlify/Vercel rewrite unknown paths to `/index.html`.
+SPA fallback: GitHub Pages serves `404.html` (copy of `index.html`) for deep links; client navigations use SvelteKit routing under the base path.
 
 Full checklist: [RELEASE.md](./RELEASE.md).
 

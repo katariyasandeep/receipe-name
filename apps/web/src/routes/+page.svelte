@@ -55,7 +55,7 @@
     const q = event.detail?.query?.trim() ?? '';
     if (!q) return;
     searching = true;
-    void goto(`${appPath('/recipes')}?q=${encodeURIComponent(q)}`).finally(() => {
+    void goto(`/recipes?q=${encodeURIComponent(q)}`).finally(() => {
       searching = false;
     });
   }

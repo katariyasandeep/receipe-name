@@ -7,7 +7,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { favorites } from '$lib/stores';
   import type { RecipeFilter, RecipeSearchResult } from '$lib/types';
-  import { appPath, recipePath } from '$lib/utils';
+  import { appPath, recipePath, stripBasePath } from '$lib/utils';
 
   const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -62,7 +62,7 @@
     if (filter.ingredient) params.set('ingredient', filter.ingredient);
     if (filter.letter) params.set('letter', filter.letter);
     const qs = params.toString();
-    await goto(qs ? `${appPath('/recipes')}?${qs}` : appPath('/recipes'), {
+    await goto(qs ? `/recipes?${qs}` : '/recipes', {
       replaceState: true,
       keepFocus: true,
       noScroll: true
@@ -154,7 +154,7 @@
 
   // afterNavigate also runs on the initial navigation — avoid duplicating discovery in onMount.
   afterNavigate(({ to }) => {
-    if (!to || to.url.pathname !== '/recipes') return;
+    if (!to || stripBasePath(to.url.pathname) !== '/recipes') return;
     readParams(to.url);
     void runDiscovery(currentFilter());
   });

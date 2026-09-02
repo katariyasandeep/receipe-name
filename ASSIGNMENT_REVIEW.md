@@ -136,7 +136,7 @@ README / RELEASE updated with the real package URL.
 | SvelteKit source | **PASS** | `apps/web` |
 | Stencil source | **PASS** | `packages/recipe-ui` |
 | npm package link | **PASS** | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
-| Deployed application URL | **FAIL** | Not deployed |
+| Deployed application URL | **PASS** | https://katariyasandeep.github.io/receipe-name/ |
 | README | **PASS** | Overview, architecture, testing |
 | Setup instructions | **PASS** | `npm install` + `build:ui` |
 | Assumptions | **PASS** | Documented in README |
