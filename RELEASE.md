@@ -82,12 +82,15 @@ Choose **one** host. Config files are already in the repo:
 
 ### GitHub Pages (recommended for this repo)
 
-GitHub Actions workflow: `.github/workflows/deploy-pages.yml`
+GitHub Actions workflow: `.github/workflows/deploy-pages.yml`  
+Publishes the static site to the **`gh-pages`** branch.
 
-1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**
-2. Push to `main` (or run the workflow manually under **Actions**)
-3. Live URL (after first successful deploy): `https://katariyasandeep.github.io/receipe-name/`
-4. The build sets `BASE_PATH=/receipe-name` and copies `index.html` → `404.html` for SPA deep links
+1. On GitHub: **Settings → Pages → Build and deployment**
+   - **Source:** Deploy from a branch  
+   - **Branch:** `gh-pages` / `/ (root)` → Save  
+2. Push to `main` (or re-run **Deploy GitHub Pages** under Actions)  
+3. Live URL: `https://katariyasandeep.github.io/receipe-name/`  
+4. Build uses `BASE_PATH=/receipe-name` and copies `index.html` → `404.html` for SPA deep links
 
 **After a successful deploy:**
 
