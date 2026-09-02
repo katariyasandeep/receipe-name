@@ -1,6 +1,6 @@
 export { toMealDbId, toUserId, parseRecipeId, isMealDbId, isUserId } from './ids';
 export { loadJson, saveJson } from './storage';
-export { recipePath } from './routes';
+export { appPath, recipePath, stripBasePath } from './routes';
 export { userRecipeToDraft, draftToUserRecipe } from './user-recipe-draft';
 export { emptyUserRecipeDraft } from '$lib/validation';
 

@@ -6,7 +6,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { userRecipes } from '$lib/stores';
   import type { RecipeFormErrors, UserRecipeDraft } from '$lib/types';
-  import { recipePath, userRecipeToDraft } from '$lib/utils';
+  import { appPath, recipePath, userRecipeToDraft } from '$lib/utils';
   import { validateUserRecipeDraft } from '$lib/validation';
 
   const id = $derived(decodeURIComponent(page.params.id ?? ''));
@@ -98,7 +98,7 @@
       return;
     }
 
-    void goto('/my-recipes');
+    void goto(appPath('/my-recipes'));
   }
 </script>
 
@@ -113,7 +113,7 @@
     message="This personal recipe is missing from local storage."
   >
     <div slot="action">
-      <a class="chip" href="/my-recipes">Back to my recipes</a>
+      <a class="chip" href={appPath('/my-recipes')}>Back to my recipes</a>
     </div>
   </rf-empty-state>
 {:else if draft}
@@ -134,7 +134,7 @@
     onrfSubmit={onSubmit}
   >
     <div slot="footer">
-      <a class="chip" href="/my-recipes">Back to list</a>
+      <a class="chip" href={appPath('/my-recipes')}>Back to list</a>
     </div>
   </rf-recipe-form>
 

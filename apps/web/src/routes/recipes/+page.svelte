@@ -7,7 +7,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { favorites } from '$lib/stores';
   import type { RecipeFilter, RecipeSearchResult } from '$lib/types';
-  import { recipePath } from '$lib/utils';
+  import { appPath, recipePath } from '$lib/utils';
 
   const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -62,7 +62,7 @@
     if (filter.ingredient) params.set('ingredient', filter.ingredient);
     if (filter.letter) params.set('letter', filter.letter);
     const qs = params.toString();
-    await goto(qs ? `/recipes?${qs}` : '/recipes', {
+    await goto(qs ? `${appPath('/recipes')}?${qs}` : appPath('/recipes'), {
       replaceState: true,
       keepFocus: true,
       noScroll: true
@@ -213,7 +213,7 @@
       message="Try a search, pick a category, or tap a letter to browse."
     >
       <div slot="action">
-        <a class="chip" href="/recipes?category=Chicken">Try Chicken</a>
+        <a class="chip" href={`${appPath('/recipes')}?category=Chicken`}>Try Chicken</a>
       </div>
     </rf-empty-state>
   {:else if empty}
@@ -222,7 +222,7 @@
       message="Try another category, cuisine, or spelling."
     >
       <div slot="action">
-        <a class="chip" href="/recipes">Clear filters</a>
+        <a class="chip" href={appPath('/recipes')}>Clear filters</a>
       </div>
     </rf-empty-state>
   {:else}

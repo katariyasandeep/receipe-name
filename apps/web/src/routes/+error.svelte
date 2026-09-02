@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
   import PageHeader from '$lib/components/PageHeader.svelte';
+  import { appPath } from '$lib/utils';
 
   const status = $derived(page.status);
   const message = $derived(
@@ -26,8 +27,8 @@
   </p>
 
   <div class="actions">
-    <a class="link-btn" href="/">Back to home</a>
-    <a class="link-btn secondary" href="/recipes">Browse recipes</a>
+    <a class="link-btn" href={appPath('/')}>Back to home</a>
+    <a class="link-btn secondary" href={appPath('/recipes')}>Browse recipes</a>
   </div>
 </section>
 

@@ -5,7 +5,7 @@
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
   import { favorites, userRecipes } from '$lib/stores';
   import type { Recipe, UserRecipe } from '$lib/types';
-  import { isUserId, parseRecipeId } from '$lib/utils';
+  import { appPath, isUserId, parseRecipeId } from '$lib/utils';
 
   let recipe = $state<Recipe | null>(null);
   let loading = $state(true);
@@ -90,7 +90,7 @@
     message="This recipe may have been removed, or the link is invalid."
   >
     <div slot="action">
-      <a class="chip" href="/recipes">Back to discover</a>
+      <a class="chip" href={appPath('/recipes')}>Back to discover</a>
     </div>
   </rf-empty-state>
 {:else}
@@ -183,9 +183,9 @@
           >Original source</a
         >
       {/if}
-      <a class="chip" href="/recipes">Find more recipes</a>
+      <a class="chip" href={appPath('/recipes')}>Find more recipes</a>
       {#if recipe.source === 'user'}
-        <a class="chip" href={`/my-recipes/${encodeURIComponent(recipe.id)}/edit`}>Edit recipe</a>
+        <a class="chip" href={appPath(`/my-recipes/${encodeURIComponent(recipe.id)}/edit`)}>Edit recipe</a>
       {/if}
     </div>
   </article>

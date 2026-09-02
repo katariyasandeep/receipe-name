@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { appPath, stripBasePath } from '$lib/utils';
 
   type NavItem = { href: string; label: string; match?: 'exact' | 'prefix' };
 
@@ -14,9 +15,10 @@
   let menuOpen = $state(false);
 
   function isActive(item: NavItem, pathname: string): boolean {
-    if (item.match === 'exact') return pathname === item.href;
-    if (item.href === '/') return pathname === '/';
-    return pathname === item.href || pathname.startsWith(`${item.href}/`);
+    const path = stripBasePath(pathname);
+    if (item.match === 'exact') return path === item.href;
+    if (item.href === '/') return path === '/';
+    return path === item.href || path.startsWith(`${item.href}/`);
   }
 
   function closeMenu() {
@@ -26,7 +28,7 @@
 
 <header class="header">
   <div class="container header-inner">
-    <a class="brand" href="/" onclick={closeMenu}>
+    <a class="brand" href={appPath('/')} onclick={closeMenu}>
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">Recipe Finder</span>
     </a>
@@ -48,7 +50,7 @@
           {@const active = isActive(item, page.url.pathname)}
           <li>
             <a
-              href={item.href}
+              href={appPath(item.href)}
               aria-current={active ? 'page' : undefined}
               onclick={closeMenu}
             >

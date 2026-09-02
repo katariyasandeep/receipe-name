@@ -96,18 +96,17 @@ GitHub: https://github.com/sandeepsaini01/recipe-finder
 
 ## Deployed application URL
 
-> **Not deployed yet.** After you deploy (Vercel, Netlify, or GitHub Pages), replace this placeholder:
+> **Pending first GitHub Pages deploy.** Enable Pages (Settings → Pages → Source: GitHub Actions), then after the workflow succeeds the app will be at:
 
 ```text
-Live app: <YOUR_DEPLOYED_APP_URL>
+Live app: https://sandeepsaini01.github.io/recipe-finder/
 ```
 
-Static hosting config is included:
+Deploy is automated via [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) (`BASE_PATH=/recipe-finder`).
 
-- Root [`vercel.json`](./vercel.json) / [`netlify.toml`](./netlify.toml)
-- App-level copies under `apps/web/` if you point the host at that folder
+Also supported: Netlify / Vercel configs at the repo root (see [RELEASE.md](./RELEASE.md)).
 
-SPA fallback rewrites unknown paths to `/index.html` so client routes work on refresh.
+SPA fallback: GitHub Pages uses a copied `404.html`; Netlify/Vercel rewrite unknown paths to `/index.html`.
 
 Full checklist: [RELEASE.md](./RELEASE.md).
 

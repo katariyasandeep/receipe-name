@@ -80,6 +80,20 @@ Choose **one** host. Config files are already in the repo:
 | Vercel | `vercel.json` (root) | `apps/web/build` |
 | GitHub Pages | Upload / Actions on `apps/web/build` | Ensure SPA fallback to `index.html` |
 
+### GitHub Pages (recommended for this repo)
+
+GitHub Actions workflow: `.github/workflows/deploy-pages.yml`
+
+1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. Push to `main` (or run the workflow manually under **Actions**)
+3. Live URL (after first successful deploy): `https://sandeepsaini01.github.io/recipe-finder/`
+4. The build sets `BASE_PATH=/recipe-finder` and copies `index.html` → `404.html` for SPA deep links
+
+**After a successful deploy:**
+
+- [ ] Paste the live URL into `README.md` (replace the deployed-app placeholder)
+- [ ] Record here: **live app URL:** `________`
+
 ### Netlify (manual)
 
 1. Log in to Netlify and create a new site from this Git repo (or drag-and-drop `apps/web/build` after a local build).
@@ -92,17 +106,6 @@ Choose **one** host. Config files are already in the repo:
 1. Log in to Vercel and import the Git repo (or `vercel` CLI from the monorepo root).
 2. Root `vercel.json` sets build command `npm run build` and `outputDirectory` `apps/web/build`, plus SPA rewrites.
 3. Deploy and verify deep-link refresh.
-
-### GitHub Pages (manual)
-
-1. Build locally: `npm run build`.
-2. Publish contents of `apps/web/build` (gh-pages branch or Actions).
-3. Configure the host so unknown paths fall back to `index.html`.
-
-**After a successful deploy:**
-
-- [ ] Paste the live URL into `README.md` (replace the deployed-app placeholder)
-- [ ] Record here: **live app URL:** `________`
 
 ---
 

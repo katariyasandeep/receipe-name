@@ -5,7 +5,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { userRecipes } from '$lib/stores';
   import type { RecipeFormErrors, UserRecipeDraft } from '$lib/types';
-  import { emptyUserRecipeDraft, recipePath } from '$lib/utils';
+  import { emptyUserRecipeDraft, appPath, recipePath } from '$lib/utils';
   import { validateUserRecipeDraft } from '$lib/validation';
 
   let draft = $state<UserRecipeDraft>(emptyUserRecipeDraft());
@@ -70,6 +70,6 @@
   onrfSubmit={onSubmit}
 >
   <div slot="footer">
-    <a class="chip" href="/my-recipes">Cancel</a>
+    <a class="chip" href={appPath('/my-recipes')}>Cancel</a>
   </div>
 </rf-recipe-form>

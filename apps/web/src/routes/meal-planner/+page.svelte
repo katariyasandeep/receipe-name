@@ -10,6 +10,7 @@
   } from '$lib/stores/meal-plan-ops';
   import type { MealDay, MealSlot, PlannedMeal, RecipeSearchResult } from '$lib/types';
   import { recipesService } from '$lib/api';
+  import { appPath } from '$lib/utils';
 
   type EditorState = {
     day: MealDay;
@@ -174,8 +175,8 @@
         Clear week
       </rf-button>
     {/if}
-    <a class="chip" href="/recipes">Browse recipes</a>
-    <a class="chip" href="/favorites">Favorites</a>
+    <a class="chip" href={appPath('/recipes')}>Browse recipes</a>
+    <a class="chip" href={appPath('/favorites')}>Favorites</a>
   </div>
 </div>
 
@@ -186,8 +187,8 @@
       message="Tap any empty slot to assign a recipe. Save favorites or create recipes first for the quickest picks — or search TheMealDB from the planner."
     >
       <div slot="action" class="hint-actions">
-        <a class="chip" href="/favorites">Open favorites</a>
-        <a class="chip" href="/my-recipes">My recipes</a>
+        <a class="chip" href={appPath('/favorites')}>Open favorites</a>
+        <a class="chip" href={appPath('/my-recipes')}>My recipes</a>
       </div>
     </rf-empty-state>
   </div>

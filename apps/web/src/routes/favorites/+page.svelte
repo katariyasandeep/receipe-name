@@ -4,7 +4,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { favorites } from '$lib/stores';
   import type { RecipeSearchResult } from '$lib/types';
-  import { recipePath } from '$lib/utils';
+  import { appPath, recipePath } from '$lib/utils';
 
   const recipes = $derived(favorites.items.map((f) => f.snapshot));
 
@@ -31,7 +31,7 @@
     message="Tap the heart on any recipe card to save it for later."
   >
     <div slot="action">
-      <a class="chip" href="/recipes">Discover recipes</a>
+      <a class="chip" href={appPath('/recipes')}>Discover recipes</a>
     </div>
   </rf-empty-state>
 {:else}

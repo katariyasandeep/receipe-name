@@ -5,7 +5,7 @@
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { userRecipes } from '$lib/stores';
   import type { RecipeSearchResult, UserRecipe } from '$lib/types';
-  import { recipePath } from '$lib/utils';
+  import { appPath, recipePath } from '$lib/utils';
 
   let deleteTarget = $state<UserRecipe | null>(null);
   let deleting = $state(false);
@@ -73,7 +73,7 @@
 {/if}
 
 <div class="toolbar">
-  <a class="chip" href="/my-recipes/new">New recipe</a>
+  <a class="chip" href={appPath('/my-recipes/new')}>New recipe</a>
   {#if recipes.length > 0}
     <p class="count">{recipes.length} recipe{recipes.length === 1 ? '' : 's'}</p>
   {/if}
@@ -85,7 +85,7 @@
     message="Write your own recipes — they stay in local storage on this browser."
   >
     <div slot="action">
-      <a class="chip" href="/my-recipes/new">Create a recipe</a>
+      <a class="chip" href={appPath('/my-recipes/new')}>Create a recipe</a>
     </div>
   </rf-empty-state>
 {:else}
@@ -100,7 +100,7 @@
         >
           <span slot="badge" class="owned-badge">Yours</span>
           <div slot="actions" class="card-actions">
-            <a class="chip" href={`/my-recipes/${encodeURIComponent(recipe.id)}/edit`}>Edit</a>
+            <a class="chip" href={appPath(`/my-recipes/${encodeURIComponent(recipe.id)}/edit`)}>Edit</a>
             <rf-button type="button" variant="danger" onrfClick={() => askDelete(recipe)}
               >Delete</rf-button
             >

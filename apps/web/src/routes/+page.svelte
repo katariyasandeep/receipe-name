@@ -6,7 +6,7 @@
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
   import { favorites } from '$lib/stores';
   import type { RecipeSearchResult } from '$lib/types';
-  import { recipePath } from '$lib/utils';
+  import { appPath, recipePath } from '$lib/utils';
 
   const CATEGORIES = [
     'Beef',
@@ -55,7 +55,7 @@
     const q = event.detail?.query?.trim() ?? '';
     if (!q) return;
     searching = true;
-    void goto(`/recipes?q=${encodeURIComponent(q)}`).finally(() => {
+    void goto(`${appPath('/recipes')}?q=${encodeURIComponent(q)}`).finally(() => {
       searching = false;
     });
   }
@@ -94,8 +94,8 @@
     ></rf-search-bar>
   </div>
   <div class="hero-actions">
-    <a class="chip" href="/recipes">Browse all recipes</a>
-    <a class="chip" href="/meal-planner">Open meal planner</a>
+    <a class="chip" href={appPath('/recipes')}>Browse all recipes</a>
+    <a class="chip" href={appPath('/meal-planner')}>Open meal planner</a>
   </div>
 </section>
 
@@ -103,7 +103,7 @@
   <h2 id="categories-title" class="section-title">Popular categories</h2>
   <div class="chip-row">
     {#each CATEGORIES as category}
-      <a class="chip" href={`/recipes?category=${encodeURIComponent(category)}`}>{category}</a>
+      <a class="chip" href={`${appPath('/recipes')}?category=${encodeURIComponent(category)}`}>{category}</a>
     {/each}
   </div>
 </section>
