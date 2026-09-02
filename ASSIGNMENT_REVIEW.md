@@ -104,22 +104,14 @@ Reviewed: 2026-08-29 · Stack: Svelte 5 + SvelteKit + TypeScript + StencilJS
 | Reusable component library | **PASS** | `packages/recipe-ui` with `rf-*` presentational components |
 | npm package | **PASS** | `@sandeep_saini/recipe-ui@0.1.0`, `files`/`exports`/`loader` ready |
 | Versioning | **PASS** | Semver `0.1.0`, `publishConfig.access: public` |
-| Published package | **FAIL** | Not on the public npm registry yet |
+| Published package | **PASS** | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
 | SvelteKit consumes npm package | **PASS** | `"@sandeep_saini/recipe-ui": "^0.1.0"` → workspace **dist/loader** |
 | No direct source import | **PASS** | App imports `@sandeep_saini/recipe-ui/loader` only |
 
-### Published package — FAIL (manual)
+### Published package — PASS
 
-1. **Problem:** Package is buildable and packable (`npm pack` = `dist/`, `loader/`, README — no `src/`) but never published.  
-2. **Files:** `packages/recipe-ui/package.json`, `README.md`, `RELEASE.md`  
-3. **Required fix (manual — do not invent URLs):**
-   ```bash
-   npm login
-   npm publish -w @sandeep_saini/recipe-ui --access public
-   ```
-   Then replace the npm placeholder in `README.md` / `RELEASE.md` with `https://www.npmjs.com/package/@sandeep_saini/recipe-ui`.  
-4. **Not fixed here:** Requires npm credentials / scope ownership.  
-5. **Local verification:** `npm run build:ui`, `npm run pack:ui` OK.
+Live on npm: [@sandeep_saini/recipe-ui@0.1.0](https://www.npmjs.com/package/@sandeep_saini/recipe-ui)  
+README / RELEASE updated with the real package URL.
 
 ---
 
@@ -143,17 +135,13 @@ Reviewed: 2026-08-29 · Stack: Svelte 5 + SvelteKit + TypeScript + StencilJS
 |-------------|--------|-------|
 | SvelteKit source | **PASS** | `apps/web` |
 | Stencil source | **PASS** | `packages/recipe-ui` |
-| npm package link | **FAIL** | Placeholder only — not published |
+| npm package link | **PASS** | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
 | Deployed application URL | **FAIL** | Not deployed |
 | README | **PASS** | Overview, architecture, testing |
 | Setup instructions | **PASS** | `npm install` + `build:ui` |
 | Assumptions | **PASS** | Documented in README |
 | Development server instructions | **PASS** | `npm run dev` / `preview` |
 | GitHub link | **PASS** | https://github.com/sandeepsaini01/recipe-finder |
-
-### npm package link — FAIL (manual)
-
-Same as Stencil “Published package” above. Update README after a real publish.
 
 ### Deployed application URL — FAIL (manual)
 
@@ -213,11 +201,12 @@ README and package `repository` fields updated with the real URL.
 
 **Not submission-complete on external deliverables:**
 
-1. Publish `@sandeep_saini/recipe-ui` and link npm  
-2. Deploy `apps/web/build` and link the live app  
+1. Deploy `apps/web/build` and link the live app  
 
-**Done:** GitHub repo linked — https://github.com/sandeepsaini01/recipe-finder  
+**Done:**
+- GitHub — https://github.com/sandeepsaini01/recipe-finder  
+- npm — https://www.npmjs.com/package/@sandeep_saini/recipe-ui  
 
-Until npm publish and deploy are done (see `RELEASE.md`), mark the overall handoff as **ready to demo locally, pending publish/deploy links**.
+Until deploy is done (see `RELEASE.md`), mark the overall handoff as **ready to demo locally, pending live app URL**.
 
-**Suggested readiness label:** **Code: READY · GitHub: DONE · npm/deploy: BLOCKED (manual)**
+**Suggested readiness label:** **Code: READY · GitHub: DONE · npm: DONE · deploy: BLOCKED (manual)**

@@ -54,9 +54,9 @@ Notes:
 
 **After a successful publish:**
 
-- [ ] Confirm the package page loads: `https://www.npmjs.com/package/@sandeep_saini/recipe-ui`
-- [ ] Paste that URL into `README.md` (replace the npm placeholder)
-- [ ] Record version here: **published version:** `________`
+- [x] Confirm the package page loads: `https://www.npmjs.com/package/@sandeep_saini/recipe-ui`
+- [x] Paste that URL into `README.md` (replace the npm placeholder)
+- [x] Record version here: **published version:** `0.1.0`
 
 ---
 
@@ -141,7 +141,7 @@ Against the **live** URL:
 
 | Artifact | URL |
 |----------|-----|
-| npm `@sandeep_saini/recipe-ui` | _Not published yet_ |
+| npm `@sandeep_saini/recipe-ui` | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
 | GitHub repository | https://github.com/sandeepsaini01/recipe-finder |
 | Deployed application | _Not deployed yet_ |
 

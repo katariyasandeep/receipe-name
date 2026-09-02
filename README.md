@@ -76,28 +76,17 @@ Package docs: [packages/recipe-ui/README.md](./packages/recipe-ui/README.md)
 
 ### npm package link
 
-> **Not published yet.** After you publish (see [RELEASE.md](./RELEASE.md)), replace this placeholder:
+Published: **[@sandeep_saini/recipe-ui@0.1.0](https://www.npmjs.com/package/@sandeep_saini/recipe-ui)**
 
 ```text
 npm: https://www.npmjs.com/package/@sandeep_saini/recipe-ui
 ```
 
-### Manual publish steps (credentials required)
-
-1. Create an [npm](https://www.npmjs.com/) account and verify email.
-2. If the `@recipe-finder` scope is new to you, ensure you can publish under that scope (org membership or first-time scoped publish).
-3. In a terminal:
+Install:
 
 ```bash
-npm login
-# Interactive: username, password/OTP, email — do this yourself; do not paste tokens into chat.
-
-cd packages/recipe-ui
-# Or from root:
-npm publish -w @sandeep_saini/recipe-ui --access public
+npm install @sandeep_saini/recipe-ui
 ```
-
-`prepublishOnly` runs `stencil build` automatically before publish.
 
 ## GitHub repository link
 
