@@ -86,8 +86,8 @@ GitHub Actions workflow: `.github/workflows/deploy-pages.yml`
 
 1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**
 2. Push to `main` (or run the workflow manually under **Actions**)
-3. Live URL (after first successful deploy): `https://sandeepsaini01.github.io/recipe-finder/`
-4. The build sets `BASE_PATH=/recipe-finder` and copies `index.html` → `404.html` for SPA deep links
+3. Live URL (after first successful deploy): `https://katariyasandeep.github.io/receipe-name/`
+4. The build sets `BASE_PATH=/receipe-name` and copies `index.html` → `404.html` for SPA deep links
 
 **After a successful deploy:**
 
@@ -114,7 +114,7 @@ GitHub Actions workflow: `.github/workflows/deploy-pages.yml`
 - [x] Initialize / push git remote if missing
 - [x] Paste the real repo URL into `README.md` (replace the GitHub placeholder)
 - [x] Optionally add `repository` fields to root / `packages/recipe-ui` `package.json` **only with the real URL**
-- [x] Record here: **GitHub URL:** `https://github.com/sandeepsaini01/recipe-finder`
+- [x] Record here: **GitHub URL:** `https://github.com/katariyasandeep/receipe-name`
 
 ---
 
@@ -145,7 +145,7 @@ Against the **live** URL:
 | Artifact | URL |
 |----------|-----|
 | npm `@sandeep_saini/recipe-ui` | https://www.npmjs.com/package/@sandeep_saini/recipe-ui |
-| GitHub repository | https://github.com/sandeepsaini01/recipe-finder |
+| GitHub repository | https://github.com/katariyasandeep/receipe-name |
 | Deployed application | _Not deployed yet_ |
 
 See also: [ARCHITECTURE.md](./ARCHITECTURE.md) §13–14, [INTEGRATION.md](./INTEGRATION.md).

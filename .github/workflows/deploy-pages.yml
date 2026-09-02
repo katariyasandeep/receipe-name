@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          BASE_PATH: /recipe-finder
+          BASE_PATH: /receipe-name
 
       - name: Prepare Pages artifacts
         run: |

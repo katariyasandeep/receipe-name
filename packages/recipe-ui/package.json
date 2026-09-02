@@ -5,10 +5,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sandeepsaini01/recipe-finder.git",
+    "url": "git+https://github.com/katariyasandeep/receipe-name.git",
     "directory": "packages/recipe-ui"
   },
-  "homepage": "https://github.com/sandeepsaini01/recipe-finder#readme",
+  "homepage": "https://github.com/katariyasandeep/receipe-name#readme",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",

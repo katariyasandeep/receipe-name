@@ -91,7 +91,7 @@ npm install @sandeep_saini/recipe-ui
 ## GitHub repository link
 
 ```text
-GitHub: https://github.com/sandeepsaini01/recipe-finder
+GitHub: https://github.com/katariyasandeep/receipe-name
 ```
 
 ## Deployed application URL
@@ -99,10 +99,10 @@ GitHub: https://github.com/sandeepsaini01/recipe-finder
 > **Pending first GitHub Pages deploy.** Enable Pages (Settings → Pages → Source: GitHub Actions), then after the workflow succeeds the app will be at:
 
 ```text
-Live app: https://sandeepsaini01.github.io/recipe-finder/
+Live app: https://katariyasandeep.github.io/receipe-name/
 ```
 
-Deploy is automated via [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) (`BASE_PATH=/recipe-finder`).
+Deploy is automated via [`.github/workflows/deploy-pages.yml`](./.github/workflows/deploy-pages.yml) (`BASE_PATH=/receipe-name`).
 
 Also supported: Netlify / Vercel configs at the repo root (see [RELEASE.md](./RELEASE.md)).
 

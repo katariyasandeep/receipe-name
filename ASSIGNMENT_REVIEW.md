@@ -141,7 +141,7 @@ README / RELEASE updated with the real package URL.
 | Setup instructions | **PASS** | `npm install` + `build:ui` |
 | Assumptions | **PASS** | Documented in README |
 | Development server instructions | **PASS** | `npm run dev` / `preview` |
-| GitHub link | **PASS** | https://github.com/sandeepsaini01/recipe-finder |
+| GitHub link | **PASS** | https://github.com/katariyasandeep/receipe-name |
 
 ### Deployed application URL — FAIL (manual)
 
@@ -153,7 +153,7 @@ README / RELEASE updated with the real package URL.
 
 ### GitHub link — PASS
 
-Repository: https://github.com/sandeepsaini01/recipe-finder  
+Repository: https://github.com/katariyasandeep/receipe-name  
 README and package `repository` fields updated with the real URL.
 
 ---
@@ -204,7 +204,7 @@ README and package `repository` fields updated with the real URL.
 1. Deploy `apps/web/build` and link the live app  
 
 **Done:**
-- GitHub — https://github.com/sandeepsaini01/recipe-finder  
+- GitHub — https://github.com/katariyasandeep/receipe-name  
 - npm — https://www.npmjs.com/package/@sandeep_saini/recipe-ui  
 
 Until deploy is done (see `RELEASE.md`), mark the overall handoff as **ready to demo locally, pending live app URL**.

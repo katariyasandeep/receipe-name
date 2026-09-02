@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-/** Set BASE_PATH=/recipe-finder for GitHub Pages project site builds. */
+/** Set BASE_PATH=/receipe-name for GitHub Pages project site builds. */
 const base = process.env.BASE_PATH ?? '';
 
 /** @type {import('@sveltejs/kit').Config} */
