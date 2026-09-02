@@ -143,13 +143,10 @@ README / RELEASE updated with the real package URL.
 | Development server instructions | **PASS** | `npm run dev` / `preview` |
 | GitHub link | **PASS** | https://github.com/katariyasandeep/receipe-name |
 
-### Deployed application URL — FAIL (manual)
+### Deployed application URL — PASS
 
-1. **Problem:** App builds to `apps/web/build` with SPA fallback, but no live host URL.  
-2. **Files:** `README.md`, `RELEASE.md`, `vercel.json`, `netlify.toml`  
-3. **Required fix:** Deploy via Netlify/Vercel/GitHub Pages per `RELEASE.md`, then paste the real URL into README/RELEASE.  
-4. **Not fixed here:** Needs hosting account.  
-5. **Local verification:** `npm run build` writes static site; `npm run preview` available.
+Live app: https://katariyasandeep.github.io/receipe-name/  
+GitHub Pages + Actions deploy; `BASE_PATH=/receipe-name`.
 
 ### GitHub link — PASS
 
@@ -199,14 +196,10 @@ README and package `repository` fields updated with the real URL.
 
 **Feature-complete for the assignment’s functional scope.** Discovery, details, CRUD recipes with validation, favorites, and meal planning are implemented end-to-end on Svelte 5 + published-shape Stencil package consumption (dist/loader, no source imports). Integration of props, events, and slots is demonstrated and documented. Tests, typecheck, and production build all pass after review fixes (per-week meal isolation, parallel featured loads, input/select specs).
 
-**Not submission-complete on external deliverables:**
+**Submission deliverables:**
 
-1. Deploy `apps/web/build` and link the live app  
-
-**Done:**
 - GitHub — https://github.com/katariyasandeep/receipe-name  
 - npm — https://www.npmjs.com/package/@sandeep_saini/recipe-ui  
+- Live app — https://katariyasandeep.github.io/receipe-name/  
 
-Until deploy is done (see `RELEASE.md`), mark the overall handoff as **ready to demo locally, pending live app URL**.
-
-**Suggested readiness label:** **Code: READY · GitHub: DONE · npm: DONE · deploy: BLOCKED (manual)**
+**Suggested readiness label:** **Code: READY · GitHub: DONE · npm: DONE · deploy: DONE**
