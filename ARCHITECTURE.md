@@ -55,7 +55,7 @@ recipe-finder/
 - `"workspaces": ["apps/*", "packages/*"]`
 - Scripts delegate: `dev` → web, `build` → recipe-ui then web, `test` → both
 
-**Hard rule:** `apps/web` depends on `@recipe-finder/recipe-ui` via the **published npm package** (or a versioned registry install). It must **not** import Stencil source from `packages/recipe-ui/src`.
+**Hard rule:** `apps/web` depends on `@sandeep_saini/recipe-ui` via the **published npm package** (or a versioned registry install). It must **not** import Stencil source from `packages/recipe-ui/src`.
 
 ---
 
@@ -86,7 +86,7 @@ recipe-finder/
 
 | Concern | Decision |
 |--------|----------|
-| Package name | `@recipe-finder/recipe-ui` |
+| Package name | `@sandeep_saini/recipe-ui` |
 | Output | Dist custom elements + hydrated loader; `customElements` target for framework-agnostic use |
 | Styling | Shadow DOM per component; CSS custom properties for theming (`--rf-*`) so the app can skin without piercing shadows |
 | State | **Presentational only** — no favorites/API/localStorage inside components |
@@ -293,12 +293,12 @@ Prefix `rf-` avoids collisions. Demonstrate **props**, **custom events**, and **
 
 ## 10. Svelte ↔ Stencil integration approach
 
-1. Publish `@recipe-finder/recipe-ui` to npm (see §13).
+1. Publish `@sandeep_saini/recipe-ui` to npm (see §13).
 2. In `apps/web`, depend on the **published version** (semver), not `file:../../packages/recipe-ui/src`.
 3. Register once in root layout (browser):
 
    ```ts
-   import { defineCustomElements } from '@recipe-finder/recipe-ui/loader';
+   import { defineCustomElements } from '@sandeep_saini/recipe-ui/loader';
    defineCustomElements();
    ```
 
@@ -348,7 +348,7 @@ Avoid global full-page spinners except initial app boot if needed.
 
 | Item | Decision |
 |------|----------|
-| Package | `@recipe-finder/recipe-ui` |
+| Package | `@sandeep_saini/recipe-ui` |
 | Access | Public npm (scoped package; `publishConfig.access: public`) |
 | Versioning | Semver; start at `0.1.0` |
 | Artifacts | Only `dist`, `loader`, README, package.json (`.npmignore` excludes src tests) |
@@ -401,5 +401,5 @@ Follow this order (matches workspace agent workflow):
 3. **Persistence:** `localStorage` for favorites, user recipes, and the current week meal plan.
 4. **State:** Svelte 5 rune stores for shared data; page-local state for search/browse.
 5. **Stencil:** Presentational `rf-*` components with props, `rf*` events, and slots; Shadow DOM + CSS variables.
-6. **Integration:** SvelteKit installs `@recipe-finder/recipe-ui` from npm and calls `defineCustomElements()`.
+6. **Integration:** SvelteKit installs `@sandeep_saini/recipe-ui` from npm and calls `defineCustomElements()`.
 7. **Ship:** Public npm package + static app host; document real links in RELEASE/README later.

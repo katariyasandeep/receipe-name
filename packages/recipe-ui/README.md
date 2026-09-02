@@ -1,4 +1,4 @@
-# @recipe-finder/recipe-ui
+# @sandeep_saini/recipe-ui
 
 Reusable **StencilJS** web components for the Recipe Finder & Meal Planner app.
 
@@ -10,13 +10,13 @@ Reusable **StencilJS** web components for the Recipe Finder & Meal Planner app.
 ## Install
 
 ```bash
-npm install @recipe-finder/recipe-ui
+npm install @sandeep_saini/recipe-ui
 ```
 
 ## Register in the host app
 
 ```ts
-import { defineCustomElements } from '@recipe-finder/recipe-ui/loader';
+import { defineCustomElements } from '@sandeep_saini/recipe-ui/loader';
 
 defineCustomElements();
 ```

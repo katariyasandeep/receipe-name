@@ -40,7 +40,7 @@ export interface RecipeFilter {
 }
 
 /**
- * Draft shape aligned with `@recipe-finder/recipe-ui` `UserRecipeDraft`
+ * Draft shape aligned with `@sandeep_saini/recipe-ui` `UserRecipeDraft`
  * (presentational form value; validation lives in `$lib/validation`).
  */
 export interface UserRecipeDraft {

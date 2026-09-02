@@ -1,5 +1,5 @@
 /**
- * @recipe-finder/recipe-ui
+ * @sandeep_saini/recipe-ui
  * Public entry — types for consumers. Components load via defineCustomElements().
  */
 export type {

@@ -14,7 +14,7 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    exclude: ['@recipe-finder/recipe-ui']
+    exclude: ['@sandeep_saini/recipe-ui']
   },
   test: {
     globals: true,

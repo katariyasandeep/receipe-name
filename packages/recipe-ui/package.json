@@ -1,11 +1,11 @@
 {
-  "name": "@recipe-finder/recipe-ui",
+  "name": "@sandeep_saini/recipe-ui",
   "version": "0.1.0",
   "description": "Reusable StencilJS web components for Recipe Finder & Meal Planner",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepsaini01/recipe-finder.git",
+    "url": "git+https://github.com/sandeepsaini01/recipe-finder.git",
     "directory": "packages/recipe-ui"
   },
   "homepage": "https://github.com/sandeepsaini01/recipe-finder#readme",

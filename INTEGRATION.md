@@ -1,6 +1,6 @@
 # SvelteKit ↔ Stencil integration
 
-How `apps/web` consumes `@recipe-finder/recipe-ui` and demonstrates **properties**, **custom events**, and **slots**.
+How `apps/web` consumes `@sandeep_saini/recipe-ui` and demonstrates **properties**, **custom events**, and **slots**.
 
 ---
 
@@ -10,11 +10,11 @@ The SvelteKit app depends on the published workspace package and registers custo
 
 ```ts
 // apps/web/src/lib/stencil.ts
-import { defineCustomElements } from '@recipe-finder/recipe-ui/loader';
+import { defineCustomElements } from '@sandeep_saini/recipe-ui/loader';
 await defineCustomElements();
 ```
 
-- Dependency: `"@recipe-finder/recipe-ui": "^0.1.0"` in `apps/web/package.json`
+- Dependency: `"@sandeep_saini/recipe-ui": "^0.1.0"` in `apps/web/package.json`
 - Package `exports["./loader"]` → built `loader/` + `dist/` (see `packages/recipe-ui/package.json`)
 - Root layout (`+layout.svelte`) calls `registerRecipeUi()` once on the client and gates page content until elements are defined (SSR-safe)
 
@@ -189,7 +189,7 @@ Domain logic (API, favorites, meal plan, validation) stays in `$lib`; Stencil co
 
 ## Integration rules (summary)
 
-1. Import `@recipe-finder/recipe-ui/loader` only — not Stencil source.
+1. Import `@sandeep_saini/recipe-ui/loader` only — not Stencil source.
 2. Pass objects/arrays with `use:ceProps={{ … }}`.
 3. Listen with `onrf*` handlers; read typed `event.detail`.
 4. Project app-specific UI through named slots (`action`, `footer`, `badge`, `actions`, `header`).

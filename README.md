@@ -9,7 +9,7 @@ This is an npm-workspaces monorepo:
 | Package | Role |
 |---------|------|
 | `apps/web` | SvelteKit (Svelte 5) application |
-| `packages/recipe-ui` | StencilJS web-component library (`@recipe-finder/recipe-ui`) |
+| `packages/recipe-ui` | StencilJS web-component library (`@sandeep_saini/recipe-ui`) |
 
 The app consumes the **built** Stencil package (`dist` / `loader`) — never Stencil source under `packages/recipe-ui/src`.
 
@@ -28,7 +28,7 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) and [INTEGRATION.md](./INTEGRATION.md) 
 - TheMealDB free tier is available from the browser (CORS allowed; soft rate limits)
 - No backend, auth, or cross-device sync — data stays on the device
 - Filter endpoints return lightweight meals; detail views call `lookup` when needed
-- Stencil must be built before the web app can resolve `@recipe-finder/recipe-ui`
+- Stencil must be built before the web app can resolve `@sandeep_saini/recipe-ui`
 
 ## Setup instructions
 
@@ -37,7 +37,7 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) and [INTEGRATION.md](./INTEGRATION.md) 
 ```bash
 # From the monorepo root
 npm install
-npm run build:ui    # builds @recipe-finder/recipe-ui (dist + loader)
+npm run build:ui    # builds @sandeep_saini/recipe-ui (dist + loader)
 ```
 
 If you only need the app after a clean clone, `npm run build` builds the UI package then the web app.
@@ -64,13 +64,13 @@ See [`.env.example`](./.env.example). Optional `PUBLIC_*` variables are reserved
 
 Do **not** commit real secrets. There are no secrets in this project today.
 
-## Stencil library (`@recipe-finder/recipe-ui`)
+## Stencil library (`@sandeep_saini/recipe-ui`)
 
 - **Version:** `0.1.0` (semver)
 - **Publish access:** public scoped package (`publishConfig.access: public`)
-- **Entries:** main package + `@recipe-finder/recipe-ui/loader` (`defineCustomElements`)
+- **Entries:** main package + `@sandeep_saini/recipe-ui/loader` (`defineCustomElements`)
 - **Artifacts published:** `dist/`, `loader/`, `README.md` (source/tests excluded via `.npmignore` + `files`)
-- **Local monorepo:** `apps/web` depends on `"@recipe-finder/recipe-ui": "^0.1.0"` resolved through workspaces to the package’s built outputs
+- **Local monorepo:** `apps/web` depends on `"@sandeep_saini/recipe-ui": "^0.1.0"` resolved through workspaces to the package’s built outputs
 
 Package docs: [packages/recipe-ui/README.md](./packages/recipe-ui/README.md)
 
@@ -79,7 +79,7 @@ Package docs: [packages/recipe-ui/README.md](./packages/recipe-ui/README.md)
 > **Not published yet.** After you publish (see [RELEASE.md](./RELEASE.md)), replace this placeholder:
 
 ```text
-npm: https://www.npmjs.com/package/@recipe-finder/recipe-ui
+npm: https://www.npmjs.com/package/@sandeep_saini/recipe-ui
 ```
 
 ### Manual publish steps (credentials required)
@@ -94,7 +94,7 @@ npm login
 
 cd packages/recipe-ui
 # Or from root:
-npm publish -w @recipe-finder/recipe-ui --access public
+npm publish -w @sandeep_saini/recipe-ui --access public
 ```
 
 `prepublishOnly` runs `stencil build` automatically before publish.

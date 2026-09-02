@@ -13,12 +13,12 @@
   ],
   "scripts": {
     "dev": "npm run dev -w apps/web",
-    "build": "npm run build -w @recipe-finder/recipe-ui && npm run build -w apps/web",
-    "build:ui": "npm run build -w @recipe-finder/recipe-ui",
+    "build": "npm run build -w @sandeep_saini/recipe-ui && npm run build -w apps/web",
+    "build:ui": "npm run build -w @sandeep_saini/recipe-ui",
     "preview": "npm run preview -w apps/web",
-    "test": "npm run test -w @recipe-finder/recipe-ui && npm run test -w apps/web --if-present",
-    "test:ui": "npm run test -w @recipe-finder/recipe-ui",
-    "pack:ui": "npm pack -w @recipe-finder/recipe-ui"
+    "test": "npm run test -w @sandeep_saini/recipe-ui && npm run test -w apps/web --if-present",
+    "test:ui": "npm run test -w @sandeep_saini/recipe-ui",
+    "pack:ui": "npm pack -w @sandeep_saini/recipe-ui"
   },
   "engines": {
     "node": ">=18"

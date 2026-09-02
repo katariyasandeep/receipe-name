@@ -8,7 +8,7 @@ let registered = false;
  */
 export async function registerRecipeUi(): Promise<void> {
   if (!browser || registered) return;
-  const { defineCustomElements } = await import('@recipe-finder/recipe-ui/loader');
+  const { defineCustomElements } = await import('@sandeep_saini/recipe-ui/loader');
   await defineCustomElements();
   registered = true;
 }

@@ -102,11 +102,11 @@ Reviewed: 2026-08-29 · Stack: Svelte 5 + SvelteKit + TypeScript + StencilJS
 | Requirement | Status | Notes |
 |-------------|--------|-------|
 | Reusable component library | **PASS** | `packages/recipe-ui` with `rf-*` presentational components |
-| npm package | **PASS** | `@recipe-finder/recipe-ui@0.1.0`, `files`/`exports`/`loader` ready |
+| npm package | **PASS** | `@sandeep_saini/recipe-ui@0.1.0`, `files`/`exports`/`loader` ready |
 | Versioning | **PASS** | Semver `0.1.0`, `publishConfig.access: public` |
 | Published package | **FAIL** | Not on the public npm registry yet |
-| SvelteKit consumes npm package | **PASS** | `"@recipe-finder/recipe-ui": "^0.1.0"` → workspace **dist/loader** |
-| No direct source import | **PASS** | App imports `@recipe-finder/recipe-ui/loader` only |
+| SvelteKit consumes npm package | **PASS** | `"@sandeep_saini/recipe-ui": "^0.1.0"` → workspace **dist/loader** |
+| No direct source import | **PASS** | App imports `@sandeep_saini/recipe-ui/loader` only |
 
 ### Published package — FAIL (manual)
 
@@ -115,9 +115,9 @@ Reviewed: 2026-08-29 · Stack: Svelte 5 + SvelteKit + TypeScript + StencilJS
 3. **Required fix (manual — do not invent URLs):**
    ```bash
    npm login
-   npm publish -w @recipe-finder/recipe-ui --access public
+   npm publish -w @sandeep_saini/recipe-ui --access public
    ```
-   Then replace the npm placeholder in `README.md` / `RELEASE.md` with `https://www.npmjs.com/package/@recipe-finder/recipe-ui`.  
+   Then replace the npm placeholder in `README.md` / `RELEASE.md` with `https://www.npmjs.com/package/@sandeep_saini/recipe-ui`.  
 4. **Not fixed here:** Requires npm credentials / scope ownership.  
 5. **Local verification:** `npm run build:ui`, `npm run pack:ui` OK.
 
@@ -213,7 +213,7 @@ README and package `repository` fields updated with the real URL.
 
 **Not submission-complete on external deliverables:**
 
-1. Publish `@recipe-finder/recipe-ui` and link npm  
+1. Publish `@sandeep_saini/recipe-ui` and link npm  
 2. Deploy `apps/web/build` and link the live app  
 
 **Done:** GitHub repo linked — https://github.com/sandeepsaini01/recipe-finder  

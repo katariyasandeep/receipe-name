@@ -11,7 +11,7 @@ declare global {
 
   /**
    * Minimal typings for Stencil custom elements used in Svelte templates.
-   * Full prop contracts live in @recipe-finder/recipe-ui.
+   * Full prop contracts live in @sandeep_saini/recipe-ui.
    */
   namespace svelteHTML {
     interface IntrinsicElements {

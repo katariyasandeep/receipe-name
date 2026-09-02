@@ -1,6 +1,6 @@
 # Release checklist — Recipe Finder
 
-Use this checklist when publishing `@recipe-finder/recipe-ui` and deploying `apps/web`.  
+Use this checklist when publishing `@sandeep_saini/recipe-ui` and deploying `apps/web`.  
 **Do not invent URLs.** Fill in the real npm / GitHub / live-app links in this file and in `README.md` only after each step succeeds.
 
 ---
@@ -20,12 +20,12 @@ Use this checklist when publishing `@recipe-finder/recipe-ui` and deploying `app
 - [ ] `npm run build:ui` completes without errors
 - [ ] `packages/recipe-ui/dist/` and `packages/recipe-ui/loader/` exist
 - [ ] Package metadata looks correct (`name`, `version` `0.1.0`, `exports`, `files`, `publishConfig.access: public`)
-- [ ] `npm pack -w @recipe-finder/recipe-ui` (or `npm run pack:ui`) only includes `dist/`, `loader/`, `README.md`, `package.json` — **no** `src/`
-- [ ] App depends on `@recipe-finder/recipe-ui` (workspace / published name), not `packages/recipe-ui/src`
+- [ ] `npm pack -w @sandeep_saini/recipe-ui` (or `npm run pack:ui`) only includes `dist/`, `loader/`, `README.md`, `package.json` — **no** `src/`
+- [ ] App depends on `@sandeep_saini/recipe-ui` (workspace / published name), not `packages/recipe-ui/src`
 
 ---
 
-## 2. Publish `@recipe-finder/recipe-ui` to npm
+## 2. Publish `@sandeep_saini/recipe-ui` to npm
 
 **Manual auth (required — do this yourself):**
 
@@ -39,7 +39,7 @@ Enter username, password, and OTP when prompted. Do not store tokens in the repo
 
 ```bash
 # From monorepo root (recommended)
-npm publish -w @recipe-finder/recipe-ui --access public
+npm publish -w @sandeep_saini/recipe-ui --access public
 
 # Equivalent from the package directory
 cd packages/recipe-ui
@@ -54,7 +54,7 @@ Notes:
 
 **After a successful publish:**
 
-- [ ] Confirm the package page loads: `https://www.npmjs.com/package/@recipe-finder/recipe-ui`
+- [ ] Confirm the package page loads: `https://www.npmjs.com/package/@sandeep_saini/recipe-ui`
 - [ ] Paste that URL into `README.md` (replace the npm placeholder)
 - [ ] Record version here: **published version:** `________`
 
@@ -131,7 +131,7 @@ Against the **live** URL:
 
 1. Bump `packages/recipe-ui` `version` (semver)
 2. Align `apps/web` dependency range if needed
-3. `npm publish -w @recipe-finder/recipe-ui --access public`
+3. `npm publish -w @sandeep_saini/recipe-ui --access public`
 4. Redeploy the app
 5. Update links/version notes in `README.md`
 
@@ -141,7 +141,7 @@ Against the **live** URL:
 
 | Artifact | URL |
 |----------|-----|
-| npm `@recipe-finder/recipe-ui` | _Not published yet_ |
+| npm `@sandeep_saini/recipe-ui` | _Not published yet_ |
 | GitHub repository | https://github.com/sandeepsaini01/recipe-finder |
 | Deployed application | _Not deployed yet_ |
 
