@@ -8,6 +8,7 @@
   import type { RecipeFormErrors, UserRecipeDraft } from '$lib/types';
   import { appPath, recipePath, userRecipeToDraft } from '$lib/utils';
   import { validateUserRecipeDraft } from '$lib/validation';
+  import { untrack } from 'svelte';
 
   const id = $derived(decodeURIComponent(page.params.id ?? ''));
   const recipe = $derived(id ? userRecipes.getById(id) : undefined);
@@ -22,10 +23,13 @@
 
   $effect(() => {
     if (recipe && recipe.id !== loadedId) {
-      draft = userRecipeToDraft(recipe);
-      loadedId = recipe.id;
-      errors = {};
-      feedback = null;
+      const next = recipe;
+      untrack(() => {
+        draft = userRecipeToDraft(next);
+        loadedId = next.id;
+        errors = {};
+        feedback = null;
+      });
     }
   });
 

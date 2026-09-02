@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
+  import { untrack } from 'svelte';
   import { recipeToSearchResult, recipesService } from '$lib/api';
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
   import { favorites, userRecipes } from '$lib/stores';
@@ -75,11 +76,13 @@
     favorites.setFavorite(recipeToSearchResult(recipe), Boolean(event.detail?.active));
   }
 
-  // React to route param changes (more reliable than afterNavigate on GitHub Pages SPA).
+  // Track only the route id — untrack load() so state writes don't re-trigger forever.
   $effect(() => {
     const id = page.params.id;
     if (!id) return;
-    void load(id);
+    untrack(() => {
+      void load(id);
+    });
   });
 </script>
 

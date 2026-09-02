@@ -8,9 +8,13 @@
   let stencilReady = $state(false);
 
   onMount(() => {
-    void registerRecipeUi().then(() => {
-      stencilReady = true;
-    });
+    void registerRecipeUi()
+      .catch((error) => {
+        console.error('Failed to register recipe-ui web components', error);
+      })
+      .finally(() => {
+        stencilReady = true;
+      });
   });
 </script>
 

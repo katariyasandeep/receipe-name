@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import { recipesService } from '$lib/api';
   import { ceProps } from '$lib/actions/ce-props';
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
@@ -153,11 +153,15 @@
     void loadFacets();
   });
 
-  // Keep discovery in sync with the URL (works with GitHub Pages base path).
+  // Keep discovery in sync with the URL without infinite $effect loops.
   $effect(() => {
-    if (stripBasePath(page.url.pathname) !== '/recipes') return;
-    readParams(page.url);
-    void runDiscovery(currentFilter());
+    const path = stripBasePath(page.url.pathname);
+    const href = page.url.href;
+    if (path !== '/recipes') return;
+    untrack(() => {
+      readParams(new URL(href));
+      void runDiscovery(currentFilter());
+    });
   });
 </script>
 
