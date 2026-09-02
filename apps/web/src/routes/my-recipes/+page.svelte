@@ -25,7 +25,7 @@
 
   function onRecipeSelect(event: CustomEvent<{ recipe: RecipeSearchResult }>) {
     const recipe = event.detail?.recipe;
-    if (recipe) void goto(recipePath(recipe.id));
+    if (recipe) void goto(appPath(recipePath(recipe.id)));
   }
 
   function askDelete(recipe: UserRecipe) {

@@ -49,7 +49,7 @@
     }
 
     feedback = { variant: 'success', message: 'Recipe created.' };
-    void goto(recipePath(created.data.id));
+    void goto(appPath(recipePath(created.data.id)));
   }
 </script>
 

@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { afterNavigate } from '$app/navigation';
   import { page } from '$app/state';
   import { recipeToSearchResult, recipesService } from '$lib/api';
   import ErrorBanner from '$lib/components/ErrorBanner.svelte';
   import { favorites, userRecipes } from '$lib/stores';
   import type { Recipe, UserRecipe } from '$lib/types';
-  import { appPath, isUserId, parseRecipeId, stripBasePath } from '$lib/utils';
+  import { appPath, isUserId, parseRecipeId } from '$lib/utils';
 
   let recipe = $state<Recipe | null>(null);
   let loading = $state(true);
@@ -33,38 +32,42 @@
     notFound = false;
     recipe = null;
 
-    const decoded = decodeURIComponent(idParam);
-    if (!decoded || !parseRecipeId(decoded)) {
-      if (generation !== loadGeneration) return;
-      notFound = true;
-      loading = false;
-      return;
-    }
-
-    if (isUserId(decoded)) {
-      const local = userRecipes.getById(decoded);
-      if (generation !== loadGeneration) return;
-      if (!local) {
+    try {
+      const decoded = decodeURIComponent(idParam);
+      if (!decoded || !parseRecipeId(decoded)) {
         notFound = true;
-        loading = false;
         return;
       }
-      recipe = local;
-      loading = false;
-      return;
-    }
 
-    const result = await recipesService.getById(decoded);
-    if (generation !== loadGeneration) return;
-    if (result.ok) {
-      recipe = result.data;
-    } else if (result.error.code === 'not_found') {
-      notFound = true;
-    } else {
-      console.error(result.error);
-      error = result.error.message || 'Failed to load recipe.';
+      if (isUserId(decoded)) {
+        const local = userRecipes.getById(decoded);
+        if (!local) {
+          notFound = true;
+          return;
+        }
+        recipe = local;
+        return;
+      }
+
+      const result = await recipesService.getById(decoded);
+      if (generation !== loadGeneration) return;
+      if (result.ok) {
+        recipe = result.data;
+      } else if (result.error.code === 'not_found') {
+        notFound = true;
+      } else {
+        console.error(result.error);
+        error = result.error.message || 'Failed to load recipe.';
+      }
+    } catch (err) {
+      if (generation !== loadGeneration) return;
+      console.error(err);
+      error = 'Failed to load recipe.';
+    } finally {
+      if (generation === loadGeneration) {
+        loading = false;
+      }
     }
-    loading = false;
   }
 
   function onFavoriteToggle(event: CustomEvent<{ active: boolean }>) {
@@ -72,11 +75,11 @@
     favorites.setFavorite(recipeToSearchResult(recipe), Boolean(event.detail?.active));
   }
 
-  // afterNavigate also runs on first paint — skip onMount load to avoid duplicate fetches.
-  afterNavigate(({ to }) => {
-    if (!to?.params?.id) return;
-    if (!stripBasePath(to.url.pathname).startsWith('/recipes/')) return;
-    void load(to.params.id);
+  // React to route param changes (more reliable than afterNavigate on GitHub Pages SPA).
+  $effect(() => {
+    const id = page.params.id;
+    if (!id) return;
+    void load(id);
   });
 </script>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { afterNavigate, goto } from '$app/navigation';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/state';
   import { onMount } from 'svelte';
   import { recipesService } from '$lib/api';
   import { ceProps } from '$lib/actions/ce-props';
@@ -62,7 +63,7 @@
     if (filter.ingredient) params.set('ingredient', filter.ingredient);
     if (filter.letter) params.set('letter', filter.letter);
     const qs = params.toString();
-    await goto(qs ? `/recipes?${qs}` : '/recipes', {
+    await goto(qs ? appPath(`/recipes?${qs}`) : appPath('/recipes'), {
       replaceState: true,
       keepFocus: true,
       noScroll: true
@@ -139,7 +140,7 @@
 
   function onRecipeSelect(event: CustomEvent<{ recipe: RecipeSearchResult }>) {
     const recipe = event.detail?.recipe;
-    if (recipe) void goto(recipePath(recipe.id));
+    if (recipe) void goto(appPath(recipePath(recipe.id)));
   }
 
   function onFavoriteToggle(event: CustomEvent<{ recipe: RecipeSearchResult; active: boolean }>) {
@@ -152,10 +153,10 @@
     void loadFacets();
   });
 
-  // afterNavigate also runs on the initial navigation — avoid duplicating discovery in onMount.
-  afterNavigate(({ to }) => {
-    if (!to || stripBasePath(to.url.pathname) !== '/recipes') return;
-    readParams(to.url);
+  // Keep discovery in sync with the URL (works with GitHub Pages base path).
+  $effect(() => {
+    if (stripBasePath(page.url.pathname) !== '/recipes') return;
+    readParams(page.url);
     void runDiscovery(currentFilter());
   });
 </script>

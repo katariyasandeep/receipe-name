@@ -55,14 +55,14 @@
     const q = event.detail?.query?.trim() ?? '';
     if (!q) return;
     searching = true;
-    void goto(`/recipes?q=${encodeURIComponent(q)}`).finally(() => {
+    void goto(appPath(`/recipes?q=${encodeURIComponent(q)}`)).finally(() => {
       searching = false;
     });
   }
 
   function onRecipeSelect(event: CustomEvent<{ recipe: RecipeSearchResult }>) {
     const recipe = event.detail?.recipe;
-    if (recipe) void goto(recipePath(recipe.id));
+    if (recipe) void goto(appPath(recipePath(recipe.id)));
   }
 
   function onFavoriteToggle(event: CustomEvent<{ recipe: RecipeSearchResult; active: boolean }>) {

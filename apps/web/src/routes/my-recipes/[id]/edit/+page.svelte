@@ -98,7 +98,7 @@
       return;
     }
 
-    void goto('/my-recipes');
+    void goto(appPath('/my-recipes'));
   }
 </script>
 
